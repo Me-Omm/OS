@@ -1,0 +1,158 @@
+This is Assignment1
+
+kishor@kishor-VirtualBox:~$ mkdir Assignments
+kishor@kishor-VirtualBox:~$ ls
+Assignments  Documents  gazebo-stable.list  Pictures  ros2_ws  Templates
+Desktop      Downloads  Music               Public    snap     Videos
+kishor@kishor-VirtualBox:~$ cd Assignments/
+kishor@kishor-VirtualBox:~/Assignments$ ls
+kishor@kishor-VirtualBox:~/Assignments$ touch kishor.txt
+kishor@kishor-VirtualBox:~/Assignments$ echo "This is Kishor Patil" >kishor.txt
+kishor@kishor-VirtualBox:~/Assignments$ echo "Hii My name is Kishor Patil" >> kishor.txt
+kishor@kishor-VirtualBox:~/Assignments$ read kishor.txt
+bash: read: `kishor.txt': not a valid identifier
+kishor@kishor-VirtualBox:~/Assignments$ read name
+                   
+kishor@kishor-VirtualBox:~/Assignments$ echo "Hello $name"
+Hello 
+kishor@kishor-VirtualBox:~/Assignments$ echo "Enter you name"
+Enter you name
+kishor@kishor-VirtualBox:~/Assignments$ read name
+Kishor
+kishor@kishor-VirtualBox:~/Assignments$ echo 'Hello $name'
+Hello $name
+kishor@kishor-VirtualBox:~/Assignments$ echo "Hello $name!" 
+Hello Kishor!
+kishor@kishor-VirtualBox:~/Assignments$ cat kishor.txt
+This is Kishor Patil
+Hii My name is Kishor Patil
+kishor@kishor-VirtualBox:~/Assignments$ touch kishorpatil.txt
+kishor@kishor-VirtualBox:~/Assignments$ echo THis is kishor patil > kishorpatil.txt
+kishor@kishor-VirtualBox:~/Assignments$ cat kishor.txt kishorpatil.txt > combined.txt
+kishor@kishor-VirtualBox:~/Assignments$ cat combined.txt
+This is Kishor Patil
+Hii My name is Kishor Patil
+THis is kishor patil
+kishor@kishor-VirtualBox:~/Assignments$ test -f kishor.txt
+kishor@kishor-VirtualBox:~/Assignments$ test -d directory 
+kishor@kishor-VirtualBox:~/Assignments$ test -f kishor.txt && echo "This is Kishor Patil"
+This is Kishor Patil
+kishor@kishor-VirtualBox:~/Assignments$ test -f kishor.txt && echo "This is Kishor "
+This is Kishor 
+kishor@kishor-VirtualBox:~/Assignments$ test -f kishor.txt && echo "File exists" || echo "File does not exist"
+File exists
+kishor@kishor-VirtualBox:~/Assignments$ for i in 1 2 3 4 5; do
+> echo "Number $i"
+> done
+Number 1
+Number 2
+Number 3
+Number 4
+Number 5
+kishor@kishor-VirtualBox:~/Assignments$ n = 6
+n: command not found
+kishor@kishor-VirtualBox:~/Assignments$ read n
+6
+kishor@kishor-VirtualBox:~/Assignments$ for i in n
+> echo "Number $i"
+bash: syntax error near unexpected token `echo'
+kishor@kishor-VirtualBox:~/Assignments$ for i in n;; do
+bash: syntax error near unexpected token `;;'
+kishor@kishor-VirtualBox:~/Assignments$ for i in n; do
+> echo "Number $i"
+> done
+Number n
+kishor@kishor-VirtualBox:~/Assignments$ read n
+6
+kishor@kishor-VirtualBox:~/Assignments$ for i in n; do
+> echo "Number $i"
+> done
+Number n
+kishor@kishor-VirtualBox:~/Assignments$ for i in 1 2 3 4 5 ; do
+> echo "Number $i" 
+> done
+Number 1
+Number 2
+Number 3
+Number 4
+Number 5
+kishor@kishor-VirtualBox:~/Assignments$ a=5
+kishor@kishor-VirtualBox:~/Assignments$ b=10
+kishor@kishor-VirtualBox:~/Assignments$ if((a<b));then
+> echo "$a is less than $b"
+> fi
+5 is less than 10
+kishor@kishor-VirtualBox:~/Assignments$ a=5
+kishor@kishor-VirtualBox:~/Assignments$ b=10
+kishor@kishor-VirtualBox:~/Assignments$ if((a<b));then
+> echo "$a is less than $b"
+> fi
+5 is less than 10
+kishor@kishor-VirtualBox:~/Assignments$ a= 5
+5: command not found
+kishor@kishor-VirtualBox:~/Assignments$ a=5
+kishor@kishor-VirtualBox:~/Assignments$ b=7
+kishor@kishor-VirtualBox:~/Assignments$ if(a<b);then
+> echo "$a is less then $$b"
+> fi
+bash: b: No such file or directory
+kishor@kishor-VirtualBox:~/Assignments$ if(a<b);then echo "$a is less than $b"; fi
+bash: b: No such file or directory
+kishor@kishor-VirtualBox:~/Assignments$ if((a<b));then echo "$a is less than $b"; fi
+5 is less than 7
+kishor@kishor-VirtualBox:~/Assignments$ while ((a<10));ddo
+> 
+> 
+> 
+> ^C
+kishor@kishor-VirtualBox:~/Assignments$ while ((a<10));do; 
+bash: syntax error near unexpected token `;'
+kishor@kishor-VirtualBox:~/Assignments$ while ((a<10));do
+> echo "Value of a: $a"
+> a=$((a+1))
+> done
+Value of a: 5
+Value of a: 6
+Value of a: 7
+Value of a: 8
+Value of a: 9
+kishor@kishor-VirtualBox:~/Assignments$ grep "Kishor" file.txt
+grep: file.txt: No such file or directory
+kishor@kishor-VirtualBox:~/Assignments$ grep "Kishor" kishor.txt
+This is Kishor Patil
+Hii My name is Kishor Patil
+kishor@kishor-VirtualBox:~/Assignments$ sed "s/Kishor/Vivek" kishor.txt
+sed: -e expression #1, char 14: unterminated `s' command
+kishor@kishor-VirtualBox:~/Assignments$ sed 's/Kishor/Vivek' kishor.txt
+sed: -e expression #1, char 14: unterminated `s' command
+kishor@kishor-VirtualBox:~/Assignments$ cat kishor.txt
+This is Kishor Patil
+Hii My name is Kishor Patil
+kishor@kishor-VirtualBox:~/Assignments$ sed 's/Kishor/Vivek/' kishor.txt
+This is Vivek Patil
+Hii My name is Vivek Patil
+kishor@kishor-VirtualBox:~/Assignments$ sed 's/Vivek/Kishor/g kishor.txt'
+sed: -e expression #1, char 18: unknown option to `s'
+kishor@kishor-VirtualBox:~/Assignments$ sed 's/Vivek/Kishor/g' kishor.txt
+This is Kishor Patil
+Hii My name is Kishor Patil
+kishor@kishor-VirtualBox:~/Assignments$ s '1 d' kishor.txt
+s: command not found
+kishor@kishor-VirtualBox:~/Assignments$ s 'Hii d' kishor.txt
+s: command not found
+kishor@kishor-VirtualBox:~/Assignments$ s '1d' kishor.txt
+s: command not found
+kishor@kishor-VirtualBox:~/Assignments$ sed '1d' kishor.txt
+Hii My name is Kishor Patil
+kishor@kishor-VirtualBox:~/Assignments$ echo "This is Kishor" >>kishor.txt
+kishor@kishor-VirtualBox:~/Assignments$ cat kishor.txt
+This is Kishor Patil
+Hii My name is Kishor Patil
+This is Kishor
+kishor@kishor-VirtualBox:~/Assignments$ ^C
+kishor@kishor-VirtualBox:~/Assignments$ touch Assignment1Commands.txt
+kishor@kishor-VirtualBox:~/Assignments$ echo "This is Assignment1" >Assignment1Commands.txt 
+kishor@kishor-VirtualBox:~/Assignments$ cat Assignment1Commands.txt 
+This is Assignment1
+kishor@kishor-VirtualBox:~/Assignments$ 
+
